@@ -8,8 +8,7 @@ trigger:
 
 pool:
   name: Default
-  demands:
-     - Environment -equals T
+  
 
 variables:
   solution: '**/*.sln'
