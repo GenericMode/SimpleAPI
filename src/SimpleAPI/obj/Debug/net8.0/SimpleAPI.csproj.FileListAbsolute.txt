@@ -36,3 +36,4 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.Web.Http.WebHost.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Debug/net8.0/SimpleAPI.sourcelink.json

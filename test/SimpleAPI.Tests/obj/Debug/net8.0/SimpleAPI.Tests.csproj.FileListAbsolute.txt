@@ -115,3 +115,4 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.DotNet.PlatformAbstractions.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.DependencyModel.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/obj/Debug/net8.0/SimpleAPI.Tests.sourcelink.json
