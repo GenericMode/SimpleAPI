@@ -4,16 +4,17 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Net.Http;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SimpleAPI.Controllers
 {
-   // [Route("api/[controller]")]
-    public class ValuesController : ApiController
+   //[Route("api/[controller]")]
+    public class ValuesController : ControllerBase
     {
         // GET: api/values
         [HttpGet]
-         [Route("api/values")]
+        [Route("api/values")]
+    
         public IEnumerable<string> Get()
         {
             return new string[] { "Test value PT2", "Test value FL2" };

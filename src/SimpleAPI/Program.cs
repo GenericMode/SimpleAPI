@@ -37,14 +37,14 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{api}/{controller=Home}/{id?}");
+//app.MapControllerRoute(
+//    name: "default",
+//   pattern: "{api}/{controller=Home}/{id?}");
 
 
 app.UseAuthorization();
 
-//app.MapControllers();
+app.MapControllers();
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
