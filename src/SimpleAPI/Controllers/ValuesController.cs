@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace SimpleAPI.Controllers
 {
-    [Route("api/[controller]")]
+   // [Route("api/[controller]")]
     public class ValuesController : ApiController
     {
         // GET: api/values
