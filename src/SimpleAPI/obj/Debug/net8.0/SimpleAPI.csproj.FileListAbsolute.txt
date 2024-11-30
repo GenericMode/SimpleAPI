@@ -37,3 +37,15 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Debug/net8.0/SimpleAPI.sourcelink.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Asp.Versioning.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Asp.Versioning.Http.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Asp.Versioning.Mvc.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Asp.Versioning.WebApi.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.AspNetCore.Mvc.Versioning.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/SimpleAPI.xml
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.IO.Pipelines.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.Text.Encodings.Web.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.Text.Json.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/songs.json
