@@ -17,7 +17,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.1.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
-     <None Update="web.config" CopyToPublishDirectory="PreserveNewest" />
+    <None Update="web.config" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="wwwroot\**" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
