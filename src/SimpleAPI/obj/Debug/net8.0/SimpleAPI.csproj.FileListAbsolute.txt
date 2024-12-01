@@ -49,3 +49,10 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.Text.Json.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/songs.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/web.config
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/appsettings.Development.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/appsettings.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/SimpleAPI.deps.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/SimpleAPI.runtimeconfig.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/songs.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/swagger.json

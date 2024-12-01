@@ -36,3 +36,12 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'publish artifacts'
+
+- script: |
+    # Ensure that the web.config file is included
+    if not exist "$(Build.ArtifactStagingDirectory)\web.config" (
+        echo "web.config not found. Generating..."
+        # Generate web.config if it does not exist
+        dotnet publish --configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory) --self-contained false
+    )
+  displayName: 'Check and generate web.config if necessary'

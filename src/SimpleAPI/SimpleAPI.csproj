@@ -20,7 +20,14 @@
     <None Update="web.config" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="wwwroot\**" CopyToPublishDirectory="PreserveNewest" />
   </ItemGroup>
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="dotnet tool restore" />
+    <Exec Command="dotnet new tool-manifest --force" />
+    <Exec Command="dotnet tool install --local Swashbuckle.AspNetCore.Cli"/>
+    <Exec Command="dotnet swagger tofile --output swagger.json $(OutputPath)\$(AssemblyName).dll v1 " />
+    </Target>
 
+  <PropertyGroup>   <GenerateDocumentationFile>true</GenerateDocumentationFile> </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
   <DocumentationFile>bin\Debug\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
   <NoWarn>1701;1702;1705;1591</NoWarn>
