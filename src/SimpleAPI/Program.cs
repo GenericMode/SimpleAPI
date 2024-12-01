@@ -13,15 +13,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
 
-    // Add support for XML comments
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    options.IncludeXmlComments(xmlPath);
-});
 
 builder.Services.AddApiVersioning(options =>
 {
@@ -30,9 +22,24 @@ builder.Services.AddApiVersioning(options =>
     options.ReportApiVersions = true;
 });
 
+
+builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new OpenApiInfo { Title = "Your API", Version = "v1" });
+
+        // Add support for XML comments
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        options.IncludeXmlComments(xmlPath);
+    });
+    
 var app = builder.Build();
+app.UseStaticFiles();
+app.UseRouting();
 
 // Configure the HTTP request pipeline.
+
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -73,7 +80,6 @@ app.UseDeveloperExceptionPage();
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
-app.UseStaticFiles();
 
 app.MapControllers();
 app.Run();
