@@ -1,7 +1,14 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/SimpleAPI
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/web.config
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/appsettings.Development.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/appsettings.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/appsettings.Development.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/appsettings.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/SimpleAPI.deps.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/SimpleAPI.runtimeconfig.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/publish/songs.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/songs.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/swagger.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/SimpleAPI.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/SimpleAPI.deps.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/SimpleAPI.runtimeconfig.json
@@ -23,6 +30,8 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/System.IO.Pipelines.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/System.Runtime.Serialization.Formatters.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/System.Text.Encodings.Web.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/System.Text.Json.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/publish/SimpleAPI.xml

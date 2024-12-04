@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "25C2O1OugsRLUer7R6ilJ0WPvMl6xYHBzsnSVA9kzU8=",
+  "Hash": "fMHLbhCvaVJZ05kQqjkCCNLq+Mey+4wH8dym+ScXbnA=",
   "Source": "SimpleAPI",
   "BasePath": "_content/SimpleAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SimpleAPI/wwwroot",
+      "Source": "SimpleAPI",
+      "ContentRoot": "/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/wwwroot/",
+      "BasePath": "_content/SimpleAPI",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

@@ -6,6 +6,8 @@ using System.Web;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using System.IO;
+//using Newtonsoft.Json;
 
           public class Song
             {
@@ -75,31 +77,93 @@ namespace SimpleAPI.Controllers
         // GET: api/values/5
         [HttpGet]
         [Route("api/values/{id}")]
-        public string Get(int id)
+        public ActionResult<Song> Get(int id)
         {
-            string Value = "Les Jackson";
-            return Value;
+             try
+        {
+
+            var absolutePath = Path.GetFullPath(@"songs.json");
+            var stringContent = System.IO.File.ReadAllText(absolutePath);
+            var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
+            var song = jsonResult?.ElementAtOrDefault(id); // id is the "index"
+
+            return Ok(new { Title = song.Title });
+        }
+        catch (Exception)
+        {
+            throw;
+        }
         }
 
-        // POST: api/values
+        // POST: api/values // post to json
         [HttpPost]
         [Route("api/values")]
-        public void Post([FromBody]string value)
+        public IActionResult AddSong([FromBody] Song newSong)
         {
+
+            var absolutePath = Path.GetFullPath(@"songs.json");
+            var stringContent = System.IO.File.ReadAllText(absolutePath);
+            var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
+            // Check if song with the same title already exists
+            if (jsonResult.Any(s => s.Title.Equals(newSong.Title, StringComparison.OrdinalIgnoreCase)))
+                return Conflict("A song with this title already exists.");
+
+         jsonResult.Add(newSong);
+         SaveSongsToFile(jsonResult);
+
+         // Return a 201 Created response with the Location header pointing to the newly created song by its index
+        return CreatedAtAction(nameof(Get), new { id = jsonResult.Count - 1 }, newSong); // Use the index (songs.Count - 1)
+        }
+        
+
+        // Helper method to write songs to JSON file
+            private void SaveSongsToFile(List<Song> songs)
+        {
+            var json = JsonSerializer.Serialize(songs, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(@"songs.json", json);
         }
 
         // PUT: api/values/5
-        [HttpPut]
-        [Route("api/values/{id}")]
-        public void Put(int id, [FromBody]string value)
+        // Update an existing song by Title
+        [HttpPut("api/songs/{title}")]
+        //[Route("api/values/{title}")]
+       public IActionResult UpdateSong(string title, [FromBody] Song updatedSong)
         {
+            var absolutePath = Path.GetFullPath(@"songs.json");
+            var stringContent = System.IO.File.ReadAllText(absolutePath);
+            var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
+            var existingSong = jsonResult.FirstOrDefault(s => s.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+
+            if (existingSong == null)
+                return NotFound("Song not found.");
+
+            // Update the song's properties
+            existingSong.Title = updatedSong.Title;
+            existingSong.Album = updatedSong.Album;
+            existingSong.Lyrics = updatedSong.Lyrics;
+
+            SaveSongsToFile(jsonResult);
+
+            return Ok(existingSong);
         }
 
-        // DELETE: api/values/5
-        [HttpDelete]
-        [Route("api/values/{id}")]
-        public void Delete(int id)
+    // Delete a song by Title
+        [HttpDelete("api/songs/{title}")]
+        //[Route("api/values/{title}")]
+        public IActionResult DeleteSong(string title)
         {
+            var absolutePath = Path.GetFullPath(@"songs.json");
+            var stringContent = System.IO.File.ReadAllText(absolutePath);
+            var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
+            var songToDelete = jsonResult.FirstOrDefault(s => s.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+
+            if (songToDelete == null)
+                return NotFound("Song not found.");
+
+            jsonResult.Remove(songToDelete);
+            SaveSongsToFile(jsonResult);
+
+            return NoContent(); // Successfully deleted
         }
-    }
+}
 }

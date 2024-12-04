@@ -1,11 +1,20 @@
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/web.config
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/appsettings.Development.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/appsettings.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/appsettings.Development.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/appsettings.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/SimpleAPI.deps.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/SimpleAPI.runtimeconfig.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/publish/songs.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/songs.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/swagger.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.staticwebassets.runtime.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.deps.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.runtimeconfig.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.pdb
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/SimpleAPI.xml
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/Asp.Versioning.Abstractions.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/Asp.Versioning.Http.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/Asp.Versioning.Mvc.dll
@@ -23,6 +32,7 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/System.IO.Pipelines.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/System.Runtime.Serialization.Formatters.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/System.Text.Encodings.Web.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/System.Text.Json.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Release/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
@@ -45,6 +55,7 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/SimpleAPI.csproj.Up2Date
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/SimpleAPI.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/refint/SimpleAPI.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/SimpleAPI.xml
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/SimpleAPI.pdb
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/SimpleAPI.genruntimeconfig.cache
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/obj/Release/net8.0/ref/SimpleAPI.dll
