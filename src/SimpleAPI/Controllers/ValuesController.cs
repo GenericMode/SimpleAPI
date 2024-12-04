@@ -77,7 +77,7 @@ namespace SimpleAPI.Controllers
         // GET: api/values/5
         [HttpGet]
         [Route("api/values/{id}")]
-        public ActionResult<Song> Get(int id)
+        public ActionResult Get(int id)
         {
              try
         {
