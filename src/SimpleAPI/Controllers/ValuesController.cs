@@ -71,9 +71,6 @@ namespace SimpleAPI.Controllers
     }
 
 
-
-
-
         // GET: api/values/5
         [HttpGet]
         [Route("api/values/{id}")]
