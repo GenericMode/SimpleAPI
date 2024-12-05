@@ -41,7 +41,7 @@ public class Song
         else
         {
             // Use D:/home for Azure (production)
-            filePath = Path.Combine("D:/home/site/songs.json");
+            filePath = ("D:/home/site/songs.json");
         }
         _logger.LogInformation($"File path used: {filePath}");
         return filePath;
