@@ -56,7 +56,7 @@ public class Song
             _logger.LogInformation($"File not found in {filePath}, copying from the application directory.");
 
             // Get the path to the deployed file (it should be copied during deployment)
-            var deployedFilePath = Path.Combine(Directory.GetCurrentDirectory(), "songs.json");
+            var deployedFilePath = Path.Combine(_env.ContentRootPath, "songs.json");
 
             // Copy the file from the application directory (project directory) to the Azure directory
             if (System.IO.File.Exists(deployedFilePath))
