@@ -33,6 +33,8 @@ public class Song
     {
         string filePath;
 
+        _logger.LogInformation($"ContentRootPath: {_env.ContentRootPath}");
+
         if (_env.IsDevelopment())
         {
             // Use the current directory for development (localhost)
@@ -57,6 +59,8 @@ public class Song
 
             // Get the path to the deployed file (it should be copied during deployment)
             var deployedFilePath = Path.Combine(_env.ContentRootPath, "songs.json");
+
+             _logger.LogInformation($"Deployed file path: {deployedFilePath}");
 
             // Copy the file from the application directory (project directory) to the Azure directory
             if (System.IO.File.Exists(deployedFilePath))
