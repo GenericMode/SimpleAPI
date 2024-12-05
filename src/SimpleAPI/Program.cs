@@ -14,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<Song>();
 
+ var songService = builder.Services.BuildServiceProvider().GetService<Song>();
+ songService.EnsureSongsFileExists();  // Make sure the file is copied if not present
+
 
 
 

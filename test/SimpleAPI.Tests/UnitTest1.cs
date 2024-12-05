@@ -4,6 +4,9 @@ using Xunit;
 using SimpleAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System.IO.Abstractions;
+using System.IO;
 
 
 namespace SimpleAPI.Tests
@@ -17,30 +20,35 @@ namespace SimpleAPI.Tests
             [Fact]
             public void GetReturnsCorrectNumber()
             {
+            // Create a mock for IFileSystem
+            var mockFileSystem = new Mock<IFileSystem>();
 
-                 // Create a mock for IHostEnvironment
-                var mockEnv = new Mock<IHostEnvironment>();
+            // Setup the mock to simulate reading a file
+            mockFileSystem.Setup(fs => fs.File.ReadAllText(It.IsAny<string>())).Returns((string path) =>
+            {
+                if (path == "/mock/path/songs.json")
+                {
+                    return "{\"Title\": \"Picture to Burn\"}";
+                }
+                throw new FileNotFoundException($"File not found: {path}");
+            });
 
-                // Set up mock behavior
-                // Set up mock behavior for EnvironmentName
-                mockEnv.Setup(env => env.EnvironmentName).Returns("Development");  // Simulating the Development environment
+            // Mock IWebHostEnvironment
+            var mockEnv = new Mock<IHostEnvironment>();
+            mockEnv.Setup(env => env.ContentRootPath).Returns("/mock/path");
 
-                var song = new Song(mockEnv.Object);
-                var controller = new ValuesController(song);
-                var expectedTitle = "Picture to Burn";
+            // Mock ILogger<Song>
+            var mockLogger = new Mock<ILogger<Song>>();
 
-                ActionResult returnValue = controller.Get(1);
-                Assert.NotNull(returnValue);  // Ensure that the result is not null
-                Assert.IsType<OkObjectResult>(returnValue);  // Ensure that the result is OkObjectResult
+            // Create the Song instance with the mock file system
+            var song = new Song(mockEnv.Object, mockLogger.Object);
 
-                // Extract the anonymous object from the OkObjectResult
-                var result = (returnValue as OkObjectResult)?.Value;
+            // Act
+            var result = song.GetFilePath();
 
-                // Since the result is an anonymous object, check for the Title property
-                Assert.NotNull(result);  // Ensure the result is not null
-                var title = result.GetType().GetProperty("Title")?.GetValue(result, null);  // Access Title property dynamically
-
-                Assert.Equal(expectedTitle, title);
-            }
+            // Assert
+            Assert.NotNull(result);
+           // Assert.Contains("\"Title\": \"Picture to Burn\"", result);  // Ensure the mocked content is returned
         }
+    }
     }

@@ -28,6 +28,8 @@
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="9.0.0"/>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.1.0"/>
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="7.1.0"/>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0"/>
+    <PackageReference Include="System.IO.Abstractions" Version="21.1.7"/>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="dotnet tool restore"/>

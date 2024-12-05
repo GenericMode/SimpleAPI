@@ -146,3 +146,13 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/System.Runtime.Serialization.Formatters.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Castle.Core.dll
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Moq.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/System.IO.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/TestableIO.System.IO.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/TestableIO.System.IO.Abstractions.Wrappers.dll

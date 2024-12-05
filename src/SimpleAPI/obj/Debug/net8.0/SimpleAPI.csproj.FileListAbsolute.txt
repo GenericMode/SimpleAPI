@@ -65,3 +65,13 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/publish/SimpleAPI.runtimeconfig.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/publish/songs.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/publish/swagger.json
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/System.IO.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/TestableIO.System.IO.Abstractions.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/src/SimpleAPI/bin/Debug/net8.0/TestableIO.System.IO.Abstractions.Wrappers.dll

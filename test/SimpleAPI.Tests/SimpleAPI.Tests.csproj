@@ -15,11 +15,18 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3"/>
     <PackageReference Include="Moq" Version="4.20.72"/>
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7"/>
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0"/>
+    <PackageReference Include="System.IO.Abstractions" Version="21.1.7"/>
   </ItemGroup>
   <ItemGroup>
     <Using Include="Xunit"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\SimpleAPI\SimpleAPI.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="songs.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
