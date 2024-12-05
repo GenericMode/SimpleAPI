@@ -53,7 +53,7 @@ public class Song
         var filePath = GetFilePath();
 
         // Check if the file exists in the D:/home/ directory (Azure App Service)
-        if (!System.IO.File.Exists(filePath))
+        if (!System.IO.File.Exists(filePath)) and (!_env.IsDevelopment()) 
         {
             _logger.LogInformation($"File not found in {filePath}, copying from the application directory.");
 
