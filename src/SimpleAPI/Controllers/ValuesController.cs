@@ -9,14 +9,6 @@ using System.Text.Json;
 using System.IO;
 //using Newtonsoft.Json;
 
-          public class Song
-            {
-                    public string Title { get; set; }
-
-                    public string Album { get; set; }
-
-                    public string Lyrics { get; set; }
-            }
 
 namespace SimpleAPI.Controllers
 {
@@ -24,17 +16,23 @@ namespace SimpleAPI.Controllers
    [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly Song _song;
+
+        public ValuesController(Song song)
+        {
+            _song = song;
+        }
  
         // GET: api/values
         [HttpGet]
         [Route("api/values")]
-    
         public IActionResult GetAllSongs() //IEnumerable<string> Get()
         {
   
             try
             {
-            var absolutePath = Path.GetFullPath(@"songs.json");
+                
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
     
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
@@ -44,7 +42,7 @@ namespace SimpleAPI.Controllers
             }
             catch (Exception)
             {
-            throw;
+                return StatusCode(500, "Internal server error while fetching songs.");
             }     
         }
 
@@ -57,7 +55,7 @@ namespace SimpleAPI.Controllers
             if (album is null)
                 return BadRequest("Album parameter is mandatory");
 
-            var absolutePath = Path.GetFullPath(@"songs.json");
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
             var songsOnly = jsonResult?.Where(x => x.Album.ToLower() == album.ToLower()).Select(x => x.Title);
@@ -79,7 +77,7 @@ namespace SimpleAPI.Controllers
              try
         {
 
-            var absolutePath = Path.GetFullPath(@"songs.json");
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
             var song = jsonResult?.ElementAtOrDefault(id); // id is the "index"
@@ -98,7 +96,7 @@ namespace SimpleAPI.Controllers
         public IActionResult AddSong([FromBody] Song newSong)
         {
 
-            var absolutePath = Path.GetFullPath(@"songs.json");
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
             // Check if song with the same title already exists
@@ -106,19 +104,12 @@ namespace SimpleAPI.Controllers
                 return Conflict("A song with this title already exists.");
 
          jsonResult.Add(newSong);
-         SaveSongsToFile(jsonResult);
+         _song.SaveSongsToFile(jsonResult);
 
          // Return a 201 Created response with the Location header pointing to the newly created song by its index
         return CreatedAtAction(nameof(Get), new { id = jsonResult.Count - 1 }, newSong); // Use the index (songs.Count - 1)
         }
         
-
-        // Helper method to write songs to JSON file
-            private void SaveSongsToFile(List<Song> songs)
-        {
-            var json = JsonSerializer.Serialize(songs, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(@"songs.json", json);
-        }
 
         // PUT: api/values/5
         // Update an existing song by Title
@@ -126,7 +117,7 @@ namespace SimpleAPI.Controllers
         //[Route("api/values/{title}")]
        public IActionResult UpdateSong(string title, [FromBody] Song updatedSong)
         {
-            var absolutePath = Path.GetFullPath(@"songs.json");
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
             var existingSong = jsonResult.FirstOrDefault(s => s.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
@@ -139,7 +130,7 @@ namespace SimpleAPI.Controllers
             existingSong.Album = updatedSong.Album;
             existingSong.Lyrics = updatedSong.Lyrics;
 
-            SaveSongsToFile(jsonResult);
+            _song.SaveSongsToFile(jsonResult);
 
             return Ok(existingSong);
         }
@@ -149,7 +140,7 @@ namespace SimpleAPI.Controllers
         //[Route("api/values/{title}")]
         public IActionResult DeleteSong(string title)
         {
-            var absolutePath = Path.GetFullPath(@"songs.json");
+            var absolutePath = _song.GetFilePath();
             var stringContent = System.IO.File.ReadAllText(absolutePath);
             var jsonResult = JsonSerializer.Deserialize<List<Song>>(stringContent);
             var songToDelete = jsonResult.FirstOrDefault(s => s.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
@@ -158,7 +149,7 @@ namespace SimpleAPI.Controllers
                 return NotFound("Song not found.");
 
             jsonResult.Remove(songToDelete);
-            SaveSongsToFile(jsonResult);
+            _song.SaveSongsToFile(jsonResult);
 
             return NoContent(); // Successfully deleted
         }

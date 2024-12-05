@@ -1,7 +1,9 @@
+using Moq;
 using System;
 using Xunit;
 using SimpleAPI.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 
 namespace SimpleAPI.Tests
@@ -11,14 +13,20 @@ namespace SimpleAPI.Tests
             [Fact]
             public void Test1()
             {
-
             }
-
-            
             [Fact]
             public void GetReturnsCorrectNumber()
             {
-                var controller = new ValuesController();
+
+                 // Create a mock for IHostEnvironment
+                var mockEnv = new Mock<IHostEnvironment>();
+
+                // Set up mock behavior
+                // Set up mock behavior for EnvironmentName
+                mockEnv.Setup(env => env.EnvironmentName).Returns("Development");  // Simulating the Development environment
+
+                var song = new Song(mockEnv.Object);
+                var controller = new ValuesController(song);
                 var expectedTitle = "Picture to Burn";
 
                 ActionResult returnValue = controller.Get(1);

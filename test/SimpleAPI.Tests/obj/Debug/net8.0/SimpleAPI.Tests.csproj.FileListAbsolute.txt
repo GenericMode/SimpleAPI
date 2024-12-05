@@ -144,3 +144,5 @@
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/swagger.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/SimpleAPI.staticwebassets.runtime.json
 /Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/System.Runtime.Serialization.Formatters.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Castle.Core.dll
+/Users/aleksey.nizegorodtsev/SimpleAPI/test/SimpleAPI.Tests/bin/Debug/net8.0/Moq.dll
