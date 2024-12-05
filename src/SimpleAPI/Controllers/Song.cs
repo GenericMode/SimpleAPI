@@ -36,12 +36,12 @@ public class Song
         if (_env.IsDevelopment())
         {
             // Use the current directory for development (localhost)
-            filePath = Path.Combine(Directory.GetCurrentDirectory(), "../songs.json");
+             filePath = Path.Combine(_env.ContentRootPath, "songs.json");
         }
         else
         {
             // Use D:/home for Azure (production)
-            filePath = Path.Combine("D:", "home", "site", "songs.json");
+            filePath = Path.Combine("D:/home/site/songs.json");
         }
         _logger.LogInformation($"File path used: {filePath}");
         return filePath;
