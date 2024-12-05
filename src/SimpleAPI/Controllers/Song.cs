@@ -49,30 +49,41 @@ public class Song
         return filePath;
     }
     public void EnsureSongsFileExists()
+{
+    var filePath = GetFilePath();
+
+    // Check if the file exists in the target directory (Azure or local)
+    if (!System.IO.File.Exists(filePath))
     {
-        var filePath = GetFilePath();
+        _logger.LogInformation($"File not found in {filePath}, copying from the application directory.");
 
-        // Check if the file exists in the D:/home/ directory (Azure App Service)
-        if (!System.IO.File.Exists(filePath)) and (!_env.IsDevelopment()) 
+        // In production (Azure), the deployed file path will be inside the project's source directory
+        if (!_env.IsDevelopment())  // We only copy in production
         {
-            _logger.LogInformation($"File not found in {filePath}, copying from the application directory.");
-
-            // Get the path to the deployed file (it should be copied during deployment)
             var deployedFilePath = Path.Combine(_env.ContentRootPath, "songs.json");
+            _logger.LogInformation($"Deployed file path: {deployedFilePath}");
 
-             _logger.LogInformation($"Deployed file path: {deployedFilePath}");
-
-            // Copy the file from the application directory (project directory) to the Azure directory
+            // Only copy if the deployed file exists
             if (System.IO.File.Exists(deployedFilePath))
             {
-                System.IO.File.Copy(deployedFilePath, filePath);
-                _logger.LogInformation($"File copied successfully from {deployedFilePath} to {filePath}");
+                try
+                {
+                    // Allow overwriting the file at the target location
+                    System.IO.File.Copy(deployedFilePath, filePath, overwrite: true);  // This will overwrite if the file exists
+                    _logger.LogInformation($"File copied successfully from {deployedFilePath} to {filePath}");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError($"Error copying the file from {deployedFilePath} to {filePath}: {ex.Message}");
+                }
             }
             else
             {
-                _logger.LogError($"Deployed songs.json file not found in {deployedFilePath}. Please ensure the file is copied correctly.");
+                _logger.LogError($"Deployed songs.json file not found in {deployedFilePath}. Please ensure the file is copied during deployment.");
             }
         }
+    }
+
     }
     public void SaveSongsToFile(List<Song> songs)
     {
