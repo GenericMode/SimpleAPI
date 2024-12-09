@@ -9,6 +9,12 @@ using System.Text.Json;
 using System.IO;
 using Microsoft.Extensions.Logging;
 
+// actually Model class
+
+// It will be a first microservice with existing songs, create/edit songs.
+// There will be a second microservice with playlists. If song was edited (or new song is created), it'll send the message 
+// to the RabbitMQ(Azure queue in prod), and playist ms will read it from queue and if it fits the playlist is updated with a new data.
+
 public class Song
             {
                     public string Title { get; set; }
